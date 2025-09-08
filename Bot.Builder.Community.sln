@@ -187,8 +187,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Builder.Community.Adapt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Builder.Community.Adapters.Infobip.Messages.Tests", "tests\Bot.Builder.Community.Adapters.Infobip.Messages.Tests\Bot.Builder.Community.Adapters.Infobip.Messages.Tests.csproj", "{5E8B43AB-752A-BDA6-EFD8-D541B42308CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infobip Messages Adapter Sample", "samples\Infobip Messages Adapter Sample\Infobip Messages Adapter Sample.csproj", "{89A32395-B74E-A4AC-E408-229E32F55BC8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug - NuGet Packages|Any CPU = Debug - NuGet Packages|Any CPU

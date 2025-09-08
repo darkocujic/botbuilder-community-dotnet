@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bot.Builder.Community.Adapters.Infobip.Messages" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
     <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.13.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\libraries\Bot.Builder.Community.Adapters.Infobip.Messages\Bot.Builder.Community.Adapters.Infobip.Messages.csproj" />
   </ItemGroup>
 
   <ItemGroup>

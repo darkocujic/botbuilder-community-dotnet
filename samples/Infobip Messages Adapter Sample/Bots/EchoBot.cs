@@ -6,7 +6,6 @@ using Microsoft.Bot.Schema;
 using Bot.Builder.Community.Adapters.Infobip.Messages;
 using Bot.Builder.Community.Adapters.Infobip.Messages.Models;
 using System;
-using System.Text.RegularExpressions;
 
 namespace Infobip_Messages_Adapter_Sample.Bots
 {
@@ -16,7 +15,7 @@ namespace Infobip_Messages_Adapter_Sample.Bots
     public class EchoBot : ActivityHandler
     {
         private static readonly Dictionary<string, UserState> _userStates = new Dictionary<string, UserState>();
-        
+
         private readonly IInfobipMessagesClient _infobipClient;
         private readonly InfobipMessagesAdapterOptions _infobipOptions;
 
@@ -77,10 +76,10 @@ namespace Infobip_Messages_Adapter_Sample.Bots
         private async Task StartMessageCollection(ITurnContext turnContext, CancellationToken cancellationToken, string command)
         {
             var userId = turnContext.Activity.From.Id;
-            
+
             string channel = InfobipChannels.WhatsApp;
             string channelName = "WhatsApp";
-            
+
             switch (command)
             {
                 case "send sms":
@@ -365,7 +364,7 @@ Check console logs for detailed error information.";
         {
             var message = $"[TEST] This is a test {channelType} message using default configuration from appsettings.json";
             var activity = MessageFactory.Text(message);
-            
+
             switch (channelType)
             {
                 case "WhatsApp":
@@ -378,7 +377,7 @@ Check console logs for detailed error information.";
                     activity.SetInfobipChannel(InfobipChannels.RCS);
                     break;
             }
-            
+
             Console.WriteLine($"[TEST] Sending test {channelType} message with default config");
             await turnContext.SendActivityAsync(activity, cancellationToken);
         }
@@ -387,13 +386,13 @@ Check console logs for detailed error information.";
         {
             var echoText = $"[ECHO] Echo: {turnContext.Activity.Text}";
             await turnContext.SendActivityAsync(MessageFactory.Text(echoText), cancellationToken);
-            
+
             if (turnContext.Activity.Text?.ToLowerInvariant().Contains("hello") == true ||
                 turnContext.Activity.Text?.ToLowerInvariant().Contains("hi") == true)
             {
                 await Task.Delay(1000, cancellationToken);
                 await turnContext.SendActivityAsync(
-                    MessageFactory.Text("[TIP] Try 'send whatsapp' to send a REAL WhatsApp message, or 'help' for all commands!"), 
+                    MessageFactory.Text("[TIP] Try 'send whatsapp' to send a REAL WhatsApp message, or 'help' for all commands!"),
                     cancellationToken);
             }
         }
@@ -460,7 +459,7 @@ Check console logs for detailed error information.";
         {
             if (string.IsNullOrEmpty(apiKey) || apiKey.Length < 8)
                 return "***";
-            
+
             return apiKey.Substring(0, 4) + "***" + apiKey.Substring(apiKey.Length - 4);
         }
 
