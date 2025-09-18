@@ -63,8 +63,6 @@
   <!-- Package Content -->
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
-    <None Include="TESTING.md" Pack="true" PackagePath="docs\" />
-    <None Include="PUBLICATION.md" Pack="true" PackagePath="docs\" />
   </ItemGroup>
 
   <!-- Dependencies -->
@@ -100,7 +98,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
