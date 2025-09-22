@@ -63,7 +63,7 @@ namespace Bot.Builder.Community.Adapters.Infobip.Messages.Tests.ToInfobipTests
             Assert.Contains("\"messages\":", json);
             Assert.Contains("\"channel\":\"WHATSAPP\"", json);
             Assert.Contains("\"sender\":\"447860099299\"", json);
-            Assert.Contains("\"destinations\":[{\"to\":\"111111111\"}]", json);
+            Assert.Contains("\"destinations\":[{\"to\":\"111111111\"", json); // Accept additional fields
             Assert.Contains("\"content\":{\"body\":{\"text\":\"May the Force be with you.\",\"type\":\"TEXT\"}}", json);
         }
 

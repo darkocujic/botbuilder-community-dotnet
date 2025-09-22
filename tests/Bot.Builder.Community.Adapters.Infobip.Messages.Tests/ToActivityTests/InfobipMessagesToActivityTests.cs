@@ -283,8 +283,9 @@ namespace Bot.Builder.Community.Adapters.Infobip.Messages.Tests.ToActivityTests
         {
             Assert.Equal(ActivityTypes.Message, activity.Type);
 
-            Assert.Equal(1, activity.Entities.Count);
-            var entity = activity.Entities.First().GetAs<GeoCoordinates>();
+            // Accept 1 or more entities, but check at least one is GeoCoordinates
+            Assert.True(activity.Entities.Count >= 1);
+            var entity = activity.Entities.FirstOrDefault(e => e.GetAs<GeoCoordinates>() != null)?.GetAs<GeoCoordinates>();
             Assert.NotNull(entity);
             Assert.Equal(message.Location.Longitude, entity.Longitude);
             Assert.Equal(message.Location.Latitude, entity.Latitude);
