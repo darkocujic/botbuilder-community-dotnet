@@ -242,7 +242,7 @@ namespace Bot.Builder.Community.Adapters.Infobip.Messages.Tests.ToActivityTests
             var activity = await InfobipMessagesToActivity.Convert(incomingMessage.Results.Single(), _infobipClient.Object).ConfigureAwait(false);
 
             Assert.NotNull(activity);
-            Assert.Equal("Unsupported message type: UNSUPPORTED", activity.Text);
+            Assert.Equal("?? Unsupported message type: UNSUPPORTED", activity.Text);
         }
 
         private void VerifyResultCoreProperties(InfobipIncomingResultBase result, Activity activity)

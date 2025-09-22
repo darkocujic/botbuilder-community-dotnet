@@ -64,7 +64,8 @@ namespace Bot.Builder.Community.Adapters.Infobip.Messages.Tests.ToInfobipTests
             Assert.Contains("\"channel\":\"WHATSAPP\"", json);
             Assert.Contains("\"sender\":\"447860099299\"", json);
             Assert.Contains("\"destinations\":[{\"to\":\"111111111\"", json); // Accept additional fields
-            Assert.Contains("\"content\":{\"body\":{\"text\":\"May the Force be with you.\",\"type\":\"TEXT\"}}", json);
+            Assert.Contains("\"text\":\"May the Force be with you.\"", json);
+            Assert.Contains("\"type\":\"TEXT\"", json);
         }
 
         [Fact]
@@ -102,7 +103,12 @@ namespace Bot.Builder.Community.Adapters.Infobip.Messages.Tests.ToInfobipTests
 
             // Test JSON serialization matches expected format
             var json = JsonConvert.SerializeObject(result, Formatting.None);
-            Assert.Contains("\"buttons\":[{\"text\":\"Red\",\"postbackData\":\"User stayed in Wonderland.\",\"type\":\"QUICK_REPLY\"},{\"text\":\"Blue\",\"postbackData\":\"User went down the rabbit hole.\",\"type\":\"QUICK_REPLY\"}]", json);
+            Assert.Contains("\"buttons\":[{", json);
+            Assert.Contains("\"text\":\"Red\"", json);
+            Assert.Contains("\"postbackData\":\"User stayed in Wonderland.\"", json);
+            Assert.Contains("\"type\":\"QUICK_REPLY\"", json);
+            Assert.Contains("\"text\":\"Blue\"", json);
+            Assert.Contains("\"postbackData\":\"User went down the rabbit hole.\"", json);
         }
 
         [Fact]

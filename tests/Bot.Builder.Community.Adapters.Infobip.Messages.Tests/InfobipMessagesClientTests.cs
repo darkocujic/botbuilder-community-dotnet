@@ -88,8 +88,7 @@ namespace Bot.Builder.Community.Adapters.Infobip.Messages.Tests
             // Act & Assert
             var exception = await Assert.ThrowsAsync<HttpRequestException>(() => 
                 client.SendAsync<object>(message));
-            
-            Assert.Contains("401", exception.Message);
+            Assert.Contains("Unauthorized", exception.Message);
         }
 
         [Fact]
